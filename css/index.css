@@ -6,7 +6,7 @@
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Root Colors (Hope Haven Inspired) */
+/* Root Colors */
 :root {
     --primary: #635985;    
     --secondary: #443C68;   
@@ -75,7 +75,7 @@ body {
 /* Banner Content */
 .banner {
     background: linear-gradient(rgba(30,115,115,0.7), rgba(19,59,59,0.9)),url('../images/ian-schneider-TamMbr4okv4-unsplash.jpg') center center no-repeat;
-    background-size: cover;   /* ensures image fully covers banner */
+    background-size: cover;   
     color: white;
     text-align: center;
     padding: 8rem 2rem;       
