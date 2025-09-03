@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-    <div class="header-image">
-        <img src="/images/HH-Logo-Final.webp" alt="Hope Haven Community Services" style="width:20%; height:auto;">
-    </div>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hope Haven</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
+
+    <!-- Header with Logo + Navbar -->
+    <header class="main-header">
+        <div class="header-logo">
+            <img src="/images/HH-Logo-Final.webp" alt="Hope Haven Community Services">
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our_mission.html">Our Mission</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="donate.html">Donate Now</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Enquiry.html">Volunteer</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
     <div class="banner">
-            <div class="navbar">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="our_mission.html">Our Mission</a></li>
-                    <li><a href="about_us.html">About Us</a></li>
-                    <li><a href="donate.html">Donate Now</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li> 
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="Enquiry.html">Volunteer</a></li>
-                </ul>
+        <div class="content">
+            <h1>Welcome to Hope Haven</h1>
+            <p>Join us in our mission to help people around the world.</p>
+            <div>
+                <button onclick="window.location.href='our_mission.html'"><span></span>Learn More</button>
+                <button onclick="window.location.href='donate.html'"><span></span>Donate</button>
             </div>
-
-            <div class="content">
-                <h1>Welcome to Hope haven </h1>
-
-                <p>Join us in our mission to help people around the world.</p>
-                
-                <div>
-                    <button onclick="window.location.href='our_mission.html'"><span></span>learn More</button>
-                    <button onclick="window.location.href='donate.html'"><span></span>Donate</button>
-                </div>
-            </div>
+        </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-    <p>&copy; 2025 Hope Haven of Northeast Georgia, Inc. All rights reserved.</p>
-</footer>
+        <p>&copy; 2025 Hope Haven of Northeast Georgia, Inc. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
