@@ -1,0 +1,127 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Root Colors */
+:root {
+    --primary: #635985;    
+    --secondary: #443C68;  
+    --light: #f0f9f9;      
+    --accent: #393053;     
+    --dark: #18122B;       
+    --text: #2c3e50;       
+}
+
+/* Body */
+body {
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Header: Logo + Navbar */
+.banner {
+    display: flex;
+    align-items: center;
+    background: var(--primary);
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Logo */
+.header-image img {
+    width: 140px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.header-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.navbar ul li a:hover {
+    background: var(--secondary);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Container for Sections */
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* Individual Sections */
+.section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.section h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.section p {
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-image img {
+        width: 120px;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+    }
+    .navbar ul li a {
+        width: 100%;
+        text-align: left;
+    }
+    .container {
+        padding: 0 1rem;
+    }
+    .section h2 {
+        font-size: 1.5rem;
+    }
+}
