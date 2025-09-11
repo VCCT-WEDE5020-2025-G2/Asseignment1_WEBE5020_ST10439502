@@ -1,0 +1,167 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Root Colors */
+:root {
+    --primary: #635985;    
+    --secondary: #443C68;  
+    --light: #f0f9f9;      
+    --accent: #393053;     
+    --dark: #18122B;       
+    --text: #2c3e50;       
+}
+
+/* Body */
+body {
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Header: Banner with Logo + Navbar */
+.banner {
+display: flex;
+align-items: center;
+background: var(--primary);
+padding: 1rem 2rem;
+flex-wrap: wrap;
+gap: 2rem;
+}
+
+/* Logo */
+.header-image img {
+    width: 140px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+.header-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.navbar ul li a:hover {
+    background: var(--secondary);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* Contact Box Layout */
+.contact-box {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Left Side */
+.contact-box .left {
+    flex: 1;
+    padding: 2rem;
+    background: var(--light);
+}
+.contact-box .left h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.contact-box .left p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+.contact-box .left a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Right Side (Form) */
+.contact-box .right {
+    flex: 1;
+    padding: 2rem;
+}
+.contact-box .right h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+.field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.field:focus {
+    border-color: var(--primary);
+}
+textarea.field {
+    resize: none;
+    height: 120px;
+}
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.btn:hover {
+    background: var(--secondary);
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-box {
+        flex-direction: column;
+    }
+    .header-image img {
+        width: 120px;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}

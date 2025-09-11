@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<div class="header-image">
-    <img src="/images/HH-Logo-Final.webp" alt="Hope Haven Community Services" style="width:20%; height:auto;">
-</div>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Team Trees</title>
-    <style>
-    </style>
+    <title>Contact Us - Hope Haven</title>
+    <link rel="stylesheet" href="/css/contact.css"> 
 </head>
 
 <body>
     <div class="banner">
+        <div class="header-image">
+            <img src="/images/HH-Logo-Final.webp" alt="Hope Haven Community Services">
+        </div>
         <div class="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="our_mission.html">Our Mission</a></li>
                 <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="contact_us.html" class="active">Contact Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="Enquiry.html">Volunteer</a></li>
             </ul>
         </div>
+    </div>
 
+    <div class="container">
+        <div class="contact-box">
+            <div class="left">
+                <h2>Contact Us</h2>
+                <p><strong>Address:</strong><br>
+                    795 Newton Bridge Rd,<br>
+                    Athens, GA 30607
+                </p>
+                <p><strong>Hours:</strong><br>
+                    Monday – Friday<br>
+                    8:00 am – 4:00 pm
+                </p>
+                <p><strong>Phone:</strong><br>
+                    706-548-4361
+                </p>
+                <p><strong>Email:</strong><br> 
+                    <a href="mailto:melinda@hopehaven.net.">melinda@hopehaven.net.</a> 
+                </p>
+            </div>
 
-        <div class="container">
-            <div class="contact-box">
-                <div class="left">
-                    <h2>Our Address</h2>
-
-                    <p>123 Greenway Lane<br>
-                        Eco City, EC 45678<br>
-                        Amrica</p><br>
-
-                    <h2>Email Us</h2>
-
-                    <p>If you prefer, you can also reach us via email at: <a
-                            href="info@teamtrees.org">info@teamtrees.org</a></p>
-
-                </div>
-
-                <div class="right">
-                    <form action="">
-                        <h2>Contact Us</h2>
-                        <input type="text" class="field" placeholder="Your Name">
-                        <input type="text" class="field" placeholder="Your Email">
-                        <input type="text" class="field" placeholder="Phone">
-                        <textarea placeholder="Message" class="field"></textarea>
-                        <button type="submit" class="btn">Send</button>
-                    </form>
-                </div>
+            <div class="right">
+                <form action="#">
+                    <h2>Send Us a Message</h2>
+                    <input type="text" class="field" placeholder="Your Name" required>
+                    <input type="email" class="field" placeholder="Your Email" required>
+                    <input type="tel" class="field" placeholder="Phone">
+                    <textarea placeholder="Message" class="field" required></textarea>
+                    <button type="submit" class="btn">Send</button>
+                </form>
             </div>
         </div>
     </div>
 
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086919979498!2d-122.41941568468263!3d37.77492977975921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808d21c4ef1f%3A0x5c0b9c2a72f0f32d!2s123%20Greenway%20Lane!5e0!3m2!1sen!2sus!4v1693071749298!5m2!1sen!2sus"
-        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <div class="container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3253.360006033234!2d-83.41000948473862!3d33.9917813275887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f66c9b6b3d03e7%3A0xa74dcb4b258cd52a!2s795%20Newton%20Bridge%20Rd%2C%20Athens%2C%20GA%2030607!5e0!3m2!1sen!2sus!4v1693071749298!5m2!1sen!2sus"
+            width="100%" height="300" style="border:0; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
 
     <footer>
         <p>&copy; 2025 Hope Haven of Northeast Georgia, Inc. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
