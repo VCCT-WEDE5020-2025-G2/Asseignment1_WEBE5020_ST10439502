@@ -2,9 +2,7 @@
 
 [![HTML](https://img.shields.io/badge/HTML-5-orange?logo=html5&logoColor=white)]()
 [![CSS](https://img.shields.io/badge/CSS-3-blue?logo=css3&logoColor=white)]()
-[![Responsive](https://img.shields.io/badge/Responsive-Design-brightgreen)]()
-[![Status](https://img.shields.io/badge/Status-Active-success)]()
-[![License](https://img.shields.io/badge/License-MIT-green)]()
+
 
 Official website project for Hope Haven of Northeast Georgia Inc.  
 a nonprofit organization providing services and advocacy for individuals with developmental disabilities.  
