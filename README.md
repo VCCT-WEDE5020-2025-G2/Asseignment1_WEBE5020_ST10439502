@@ -1,33 +1,47 @@
- Hope Haven Website
+# 🌟 Hope Haven Website
 
-This is the official website project for Hope Haven of Northeast Georgia, Inc., a nonprofit organization providing services for individuals with developmental disabilities. The website provides information about the organization, its mission, services, volunteer opportunities and ways to donate.
+[![HTML](https://img.shields.io/badge/HTML-5-orange?logo=html5&logoColor=white)]()
+[![CSS](https://img.shields.io/badge/CSS-3-blue?logo=css3&logoColor=white)]()
+[![Responsive](https://img.shields.io/badge/Responsive-Design-brightgreen)]()
+[![Status](https://img.shields.io/badge/Status-Active-success)]()
+[![License](https://img.shields.io/badge/License-MIT-green)]()
 
+Official website project for Hope Haven of Northeast Georgia Inc.  
+a nonprofit organization providing services and advocacy for individuals with developmental disabilities.  
 
+The website serves as an accessible hub for information about the organization, its mission, programs, volunteer opportunities, and ways to contribute.
 
- About
+---
 
-Hope Haven is one of the oldest community programs in Georgia, dedicated to supporting individuals with developmental disabilities. The website is designed to provide users with easy access to information about the organization, its services, volunteer opportunities and donation options.
+## 📖 About  
 
+Hope Haven is one of the oldest community programs in Georgia, dedicated to supporting individuals with developmental disabilities.  
 
+This website was created to:  
+- Share Hope Haven’s mission, vision, and values  
+- Highlight programs and community services  
+- Provide a volunteer sign-up form for engagement  
 
- Features
+---
 
-- Responsive design for desktop and mobile  
-- Information about Hope Haven’s mission, vision and core values  
-- Volunteer sign-up form  
-- Community services descriptions  
-- Contact page with address, email and embedded Google Map  
+## ✨ Features  
 
+- 📱 Responsive design (mobile-first, optimized for all devices)  
+- 🏛 About pages detailing history, mission, vision, and values  
+- 👐 Volunteer form for community participation  
+- 📝 Services overview of CLS and CRA programs  
+- 📍 Contact page with form, address, email, and Google Map integration  
 
+---
 
- Pages
+## 📂 Pages Overview  
 
-1. Home (`index.html`) – Introduction to Hope Haven and quick links to mission and donation pages.  
-2. Our Mission (`our_mission.html`) – Details about the organization’s mission, visionand values.  
-3. About Us (`about_us.html`) – Organization overview, historyand impact.  
-4. Contact Us (`contact_us.html`) – Contact form, address and map.  
-5. Services (`services.html`) / Community Services (`community_services.html`) – Description of CLS and CRA programs.  
-6. Volunteer (`Enquiry.html`) – Volunteer sign-up form.
+- Home (`index.html`) – Introduction with quick access to mission and donations  
+- Our Mission (`our_mission.html`) – Mission, vision, and values  
+- About Us (`about_us.html`) – Organization overview, history, and impact  
+- Services / Community Services (`services.html`) – Details on the programs  
+- Volunteer (`enquiry.html`) – Volunteer sign-up form  
+- Contact Us (`contact_us.html`) – Contact form, address, and embedded map  
 
-
+---
 
