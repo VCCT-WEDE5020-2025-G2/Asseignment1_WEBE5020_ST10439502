@@ -1,0 +1,12 @@
+form { display: grid; gap: 0.9rem; max-width: 640px; margin-top: 0.75rem; }
+label { font-weight: 600; }
+input, select, textarea {
+  padding: 0.8rem; border: 2px solid #ccd3da; border-radius: 10px; font-size: 1rem;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(99,89,133,.18);
+}
+fieldset { border: 0; padding: 0; display: grid; gap: .4rem; margin: .2rem 0 0.4rem; }
+.checkbox { display: flex; align-items: flex-start; gap: .5rem; }
+.status { margin-top: .25rem; font-weight: 700; }
+button[type="submit"] { width: fit-content; }

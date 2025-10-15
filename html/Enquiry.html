@@ -1,74 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hope Haven Volunteer Sign-Up</title>
-    <link rel="stylesheet" type="text/css" href="/css/volunteer.css">
+  <meta charset="utf-8" />
+  <meta name="description" content="Enquire about services, volunteering, or sponsorship with Hope Haven of Northeast Georgia." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry — Hope Haven</title>
+
+  <!-- Use your existing site styles; add a forms.css if you have one -->
+  <link rel="stylesheet" href="/css/mission.css" />
+  <link rel="stylesheet" href="/css/services.css" />
+  <link rel="stylesheet" href="/css/forms.css" />
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <img id="logo" src="/images/HH-Logo-Final.webp" alt="Hope Haven of Northeast Georgia logo" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our_mission.html">Our Mission</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Enquiry.html" aria-current="page">Volunteer / Enquiry</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <!-- CONTENT -->
+  <section id="content">
+    <div class="section">
+      <h2>Volunteer / Enquiry Form</h2>
 
-    <div class="banner">
-        <div class="header-image">
-            <img src="/images/HH-Logo-Final.webp" alt="Hope Haven Community Services">
-        </div>
-        <div class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="our_mission.html">Our Mission</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="Enquiry.html">Volunteer</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li> 
-            </ul>
-        </div>
+      <form id="enquiryForm" novalidate>
+        <!-- Honeypot (spam trap) -->
+        <input type="text" name="company" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+
+        <label for="enqName">Full Name</label>
+        <input type="text" id="enqName" name="name" required minlength="3" placeholder="Enter your full name" autocomplete="name">
+
+        <label for="enqEmail">Email Address</label>
+        <input type="email" id="enqEmail" name="email" required placeholder="you@example.com" autocomplete="email">
+
+        <label for="enqPhone">Phone (optional)</label>
+        <input type="tel" id="enqPhone" name="phone" pattern="^[0-9+()\-.\s]{7,}$" placeholder="+1 (555) 123-4567" autocomplete="tel">
+
+        <label for="enqType">Type of Enquiry</label>
+        <select id="enqType" name="type" required>
+          <option value="">-- Select --</option>
+          <option value="volunteer">Volunteering</option>
+          <option value="sponsorship">Sponsorship</option>
+          <option value="services">Service Information</option>
+          <option value="other">Other</option>
+        </select>
+
+        <fieldset>
+          <legend>Preferred Contact Method</legend>
+          <label><input type="radio" name="contact_method" value="email" checked> Email</label>
+          <label><input type="radio" name="contact_method" value="phone"> Phone</label>
+        </fieldset>
+
+        <label for="enqMessage">Your Message</label>
+        <textarea id="enqMessage" name="message" rows="6" required minlength="10" placeholder="Tell us how we can help..."></textarea>
+
+        <label class="checkbox">
+          <input type="checkbox" id="enqConsent" name="consent" required>
+          I consent to Hope Haven contacting me about this enquiry.
+        </label>
+
+        <button type="submit" id="enqSubmit">Send Enquiry</button>
+
+        <p id="formStatus" class="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>Hope Haven of Northeast Georgia</h2>
+        <p>Preparing, empowering, and connecting adults with developmental disabilities since 1958.</p>
+        <p>© <span id="current-year"></span> Hope Haven of Northeast Georgia, Inc. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our_mission.html">Our Mission</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="Enquiry.html">Volunteer</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:info@hopehaven.org">info@hopehaven.org</a></p>
+        <p>Phone: +1 (000) 000-0000</p>
+        <p>Address: Athens-Clarke County, Northeast Georgia</p>
+      </div>
     </div>
 
-    <div class="container">
-        <div class="section">
-            <h1>Volunteer Sign-Up Form</h1>
-            <p>Thank you for your interest in volunteering with Hope Haven! Please fill out the form below.</p>
-
-            <form action="#" method="post" class="form-box">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone">
-
-                <label for="address">Address:</label>
-                <textarea id="address" name="address" rows="3"></textarea>
-
-                <label for="availability">Availability (Days & Times):</label>
-                <textarea id="availability" name="availability" rows="3" required></textarea>
-
-                <label for="skills">Skills or Experience:</label>
-                <textarea id="skills" name="skills" rows="3"></textarea>
-
-                <label for="interests">Volunteer Interests:</label>
-                <select id="interests" name="interests">
-                    <option value="community">Community Support</option>
-                    <option value="events">Event Assistance</option>
-                    <option value="fundraising">Fundraising</option>
-                    <option value="administration">Administrative Support</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <label for="message">Additional Message:</label>
-                <textarea id="message" name="message" rows="3"></textarea>
-
-                <input type="submit" value="Submit" class="btn-submit">
-            </form>
-        </div>
+    <hr />
+    <div class="footer-follow">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a></li>
+      </ul>
     </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Hope Haven of Northeast Georgia, Inc. All rights reserved.</p>
-    </footer>
-
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+  <script src="/assets/js/forms.js" defer></script>
 </body>
 </html>
