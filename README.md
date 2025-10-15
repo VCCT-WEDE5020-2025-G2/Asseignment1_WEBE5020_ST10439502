@@ -43,3 +43,20 @@ This website was created to:
 
 ---
 
+## Images
+
+<img width="1920" height="1080" alt="Screenshot (19)" src="https://github.com/user-attachments/assets/eab22453-0720-413e-91b9-d17e0751cbf6" />
+<img width="1920" height="1080" alt="Screenshot (20)" src="https://github.com/user-attachments/assets/9b985572-fcac-48e5-9b60-2b5c3b594020" />
+<img width="1920" height="1080" alt="Screenshot (21)" src="https://github.com/user-attachments/assets/4d69e7a9-29b9-4a86-8e3e-7399333aa725" />
+<img width="1920" height="1080" alt="Screenshot (22)" src="https://github.com/user-attachments/assets/983df9e0-e6f1-4126-9b07-659d0b9280a4" />
+<img width="1920" height="1080" alt="Screenshot (23)" src="https://github.com/user-attachments/assets/97a8d4ff-418d-41a5-80cd-b6c06765eed5" />
+<img width="1920" height="1080" alt="Screenshot (24)" src="https://github.com/user-attachments/assets/854f61de-482b-4f71-97bc-e3509b75c909" />
+
+---
+
+## Refranceses
+
+- Freepik. (2025). Community Images - Free Download on Freepik. [online] Available at: https://www.freepik.com/free-photos-vectors/community.
+
+
+‌
