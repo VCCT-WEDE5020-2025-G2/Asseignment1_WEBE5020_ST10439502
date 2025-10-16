@@ -119,7 +119,6 @@
   <script>
     document.getElementById("current-year").textContent = new Date().getFullYear();
 
-    // —— Modal helpers ——
     function openModal() {
       const modal = document.getElementById("successModal");
       const closeBtn = document.getElementById("modalCloseBtn");
@@ -147,18 +146,15 @@
       modal.removeEventListener("click", modal._onBackdrop || (()=>{}));
     }
 
-    // —— Form: open modal on submit ——
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
       openModal();
       this.reset();
     });
 
-    // —— Close button ——
     document.getElementById("modalCloseBtn").addEventListener("click", closeModal);
   </script>
 
-  <!-- Minimal modal CSS-->
   <style>
     :root {
       --primary:#635985; --secondary:#443C68; --text:#2c3e50;
