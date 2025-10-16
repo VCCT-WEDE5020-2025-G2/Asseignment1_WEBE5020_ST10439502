@@ -11,7 +11,7 @@ The website serves as an accessible hub for information about the organization, 
 
 ---
 
-## 📖 About  
+📖 About  
 
 Hope Haven is one of the oldest community programs in Georgia, dedicated to supporting individuals with developmental disabilities.  
 
@@ -22,7 +22,7 @@ This website was created to:
 
 ---
 
-## ✨ Features  
+✨ Features  
 
 - 📱 Responsive design (mobile-first, optimized for all devices)  
 - 🏛 About pages detailing history, mission, vision, and values  
@@ -32,7 +32,7 @@ This website was created to:
 
 ---
 
-## 📂 Pages Overview  
+📂 Pages Overview  
 
 - Home (`index.html`) – Introduction with quick access to mission and donations  
 - Our Mission (`our_mission.html`) – Mission, vision, and values  
@@ -40,6 +40,71 @@ This website was created to:
 - Services / Community Services (`services.html`) – Details on the programs  
 - Volunteer (`enquiry.html`) – Volunteer sign-up form  
 - Contact Us (`contact_us.html`) – Contact form, address, and embedded map  
+
+---
+
+Version 3.0 (Current) — Part 3: Accessibility, Structure & Content Refinement
+
+🧩 Accessibility Enhancements
+- Added WCAG-friendly heading structure (`<h1>` → `<h2>` → `<h3>`) for improved screen reader navigation.
+- Introduced a “Skip to Main Content” link for better keyboard accessibility.
+- Applied ARIA labels (`aria-labelledby`, `aria-current`) for clear navigation and section identification.
+- Ensured all images include meaningful alt text for inclusivity and SEO.
+
+🏗️ Semantic Structure Improvements
+- Implemented semantic HTML landmarks: `<header>`, `<main>`, `<section>`, and `<footer>`.
+- Reorganized content into clear, labeled sections (Hero, Mission, Program Quality, Organization, Footer).
+- Created consistent `.container` and `.grid` layouts across all sections.
+- Converted “Mission & Principles” into a numbered card-based ordered list (`<ol>`) for easier styling and structure.
+
+🔍 SEO & Performance Optimization
+- Consolidated and cleaned duplicate meta tags (single `<meta charset>` + `<meta viewport>`).
+- Added canonical link and Open Graph (OG) metadata for better search and social sharing.
+- Enabled lazy loading (`loading="lazy"`) and specified `width`/`height` for all images to reduce layout shift.
+- Improved page `<title>` and meta descriptions for stronger SEO performance.
+
+🧭 Navigation & Footer Upgrades
+- Replaced invalid `<a><button></button></a>` structure with a semantic anchor link button (`.btn.btn-primary`).
+- Wrapped site logo in a branded link pointing to Home (index.html).
+- Refined footer structure into three semantic areas:
+  - About Section (organization summary)
+  - Quick Links (site navigation)
+  - Contact Information (email, phone, and address)
+- Added accessible text labels for social links, ready for icon styling via CSS.
+
+⚙️ General Refinements
+- Removed JavaScript to keep the About page strictly HTML + CSS only.
+- Simplified repetitive wording for a cleaner, more professional tone.
+- Verified internal links and filenames for consistency (`about_us.html`, `Enquiry.html`, etc.).
+- Validated final HTML for W3C compliance and ensured cross-browser stability.
+
+---
+
+Version 2.0 — Part 2: CSS Styling & Responsive Design
+- Added site-wide color variables and consistent typography scale.
+- Improved navigation bar with logo alignment and structured menu layout.
+- Designed a two-column hero section with responsive scaling.
+- Created interactive service/mission cards with hover effects.
+- Added mobile-first breakpoints at 968px, 768px, and 480px.
+- Enhanced form and input styling with focus/hover states.
+- Implemented CSS Grid and Flexbox layouts for modern responsiveness.
+- Optimized image display and performance.
+
+---
+
+Version 1.1 — Part 1: Corrections
+- Fixed HTML semantic structure and heading hierarchy.
+- Improved content readability and spacing.
+- Organized image assets and file naming conventions.
+- Updated internal link paths for consistency and reliability.
+
+---
+
+Version 1.0 — Part 1: Foundation
+- Initial project setup and repository creation.
+- Basic HTML skeletons for all five core pages.
+- Drafted text content and placeholder images.
+- Created README documentation and initial directory structure.
 
 ---
 
