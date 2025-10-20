@@ -28,7 +28,7 @@ body{
   font-size: 16px;
 }
 
-/* Header */
+/* ========== HEADER BAR ========== */
 .main-header {
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@ body{
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Logo */
+/* ========== LOGO ========== */
 .header-logo img {
   width: 140px;
   height: auto;
@@ -52,7 +52,7 @@ body{
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
 
-/* Navbar Layout */
+/* ========== NAVBAR LAYOUT ========== */
 .navbar {
   display: flex;
   align-items: center;
@@ -60,7 +60,7 @@ body{
   width: 100%;
 }
 
-/* Left Side Navigation Links */
+/* ========== NAV LEFT (LINKS) ========== */
 .nav-left {
   display: flex;
   align-items: center;
@@ -91,21 +91,17 @@ body{
   transition: width 0.3s ease;
   border-radius: 3px;
 }
-.nav-left ul li a:hover::after {
-  width: 100%;
-}
-.nav-left ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+.nav-left ul li a:hover::after { width: 100%; }
+.nav-left ul li a:hover { background: rgba(255, 255, 255, 0.1); }
 
-/* Right Side: Search Bar */
+/* ========== NAV RIGHT (SEARCH) ========== */
 .nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-/* Search Bar Styling */
+/* ========== SEARCH BAR ========== */
 .site-search {
   display: flex;
   align-items: center;
@@ -148,7 +144,7 @@ body{
   overflow: hidden;
 }
 
-/* Keyboard focus for links */
+/* ========== KEYBOARD FOCUS ========== */
 a:focus-visible{
   outline: 3px solid var(--ring);
   outline-offset: 2px;
@@ -204,8 +200,8 @@ a:focus-visible{
 }
 .mission-main-point-div p{ 
   color: var(--muted); 
-  margin-top: .6rem; }
-
+  margin-top: .6rem; 
+}
 .mission-points-div{
   display: grid; 
   grid-template-columns: repeat(2, minmax(0,1fr)); 
@@ -233,11 +229,9 @@ a:focus-visible{
   font-weight: 800; 
   margin-bottom: .5rem;
 }
-.points p{ 
-  color: var(--text); 
-}
+.points p{ color: var(--text); }
 
-/* Divider line used between major sections */
+/* ========== DIVIDER ========== */
 .divider{
   border: none; 
   height: 2px; 
@@ -259,16 +253,15 @@ a:focus-visible{
   color: var(--primary); 
   margin-bottom: .5rem;
 }
-.brif-div p{ 
-  color: var(--text); 
-}
+.brif-div p{ color: var(--text); }
 .how-we-work-imgs{
   display: grid; 
   grid-template-columns: repeat(3, 1fr); 
   gap: .65rem;
 }
 .how-we-work-imgs img{
-  width: 100%; aspect-ratio: 4/3; 
+  width: 100%; 
+  aspect-ratio: 4/3; 
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0,0,0,.10);
@@ -279,6 +272,7 @@ a:focus-visible{
   box-shadow: 0 12px 26px rgba(0,0,0,.14); 
   filter: saturate(1.05); 
 }
+
 /* ========== ORGANIZATION / JOIN-US STRIPE ========== */
 .join-us-div{
   display: grid; 
@@ -295,9 +289,8 @@ a:focus-visible{
   font-size: 1.25rem; 
   margin-top: .2rem;
 }
-.join-us-div .txt p{ 
-  color: var(--text); 
-}
+.join-us-div .txt p{ color: var(--text); }
+
 /* ========== FOOTER ========== */
 footer {
   background: var(--dark);
@@ -362,20 +355,23 @@ footer hr {
   transform: translateY(-2px);
 }
 
-/* ========== LEGACY SUPPORT (if .banner exists on other pages) ========== */
+/* ========== LEGACY SUPPORT (BANNER) ========== */
 .banner{
   display: flex; 
   align-items: center; 
-  gap: 2rem; flex-wrap: wrap;
+  gap: 2rem; 
+  flex-wrap: wrap;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  padding: 1rem 2rem; box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  padding: 1rem 2rem; 
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
 }
 
 /* ========== UTILITIES ========== */
 .container{ max-width: 1200px; margin: 3rem auto; padding: 0 1.25rem; }
 .section{
   background: linear-gradient(145deg, #ffffff, #f7f7f7);
-  padding: 2rem; margin-bottom: 2rem; 
+  padding: 2rem; 
+  margin-bottom: 2rem; 
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,.1);
   transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
@@ -391,14 +387,12 @@ footer hr {
   .how-we-work{ grid-template-columns: 1fr; }
   .footer-container{ grid-template-columns: 1fr 1fr; }
 }
-
 @media (max-width: 820px){
   .who-we-are-div{ grid-template-columns: 1fr; }
   .mission-points-div{ grid-template-columns: 1fr; }
   .how-we-work-imgs{ grid-template-columns: repeat(2, 1fr); }
   .join-us-div{ grid-template-columns: 1fr; }
 }
-
 @media (max-width: 560px){
   .navbar{ flex-wrap: wrap; }
   .navbar ul{ width: 100%; }

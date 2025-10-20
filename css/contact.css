@@ -1,4 +1,4 @@
-/* General Reset */
+/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Root Colors */
+/* ========== THEME ========== */
 :root {
   --primary: #635985;
   --secondary: #443C68;
@@ -16,7 +16,7 @@
   --text: #2c3e50;
 }
 
-/* Body Styling */
+/* ========== BASE ========== */
 body {
   background: var(--light);
   color: var(--text);
@@ -24,7 +24,7 @@ body {
   font-size: 16px;
 }
 
-/* Header */
+/* ========== HEADER BAR ========== */
 .main-header {
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@ body {
   flex-wrap: wrap; /* keeps things tidy on small screens */
 }
 
-/* Logo */
+/* ========== LOGO ========== */
 .header-logo img {
   width: 140px;
   height: auto;
@@ -49,7 +49,7 @@ body {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
 
-/* Navbar Layout */
+/* ========== NAVBAR LAYOUT ========== */
 .navbar {
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@ body {
   width: 100%;
 }
 
-/* Left Side Navigation Links */
+/* ========== NAV LEFT (LINKS) ========== */
 .nav-left {
   display: flex;
   align-items: center;
@@ -88,21 +88,17 @@ body {
   transition: width 0.3s ease;
   border-radius: 3px;
 }
-.nav-left ul li a:hover::after {
-  width: 100%;
-}
-.nav-left ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+.nav-left ul li a:hover::after { width: 100%; }
+.nav-left ul li a:hover { background: rgba(255, 255, 255, 0.1); }
 
-/* Right Side: Search Bar */
+/* ========== NAV RIGHT (SEARCH) ========== */
 .nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-/* Search Bar Styling */
+/* ========== SEARCH BAR ========== */
 .site-search {
   display: flex;
   align-items: center;
@@ -145,7 +141,7 @@ body {
   overflow: hidden;
 }
 
-/* Hero Banner (optional; safe to keep even if not used on contact page) */
+/* ========== HERO BANNER ========== */
 .banner {
   background: linear-gradient(rgba(30,115,115,0.7), rgba(19,59,59,0.9)),
               url('../images/ian-schneider-TamMbr4okv4-unsplash.jpg') center center no-repeat;
@@ -154,7 +150,10 @@ body {
   text-align: center;
   padding: 8rem 2rem;
   min-height: 85vh;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: background 0.5s ease;
 }
 .banner h1 {
@@ -168,7 +167,7 @@ body {
   text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
 }
 
-/* Buttons */
+/* ========== BUTTONS ========== */
 button, .btn {
   background: var(--accent);
   border: none;
@@ -191,7 +190,7 @@ button:hover, .btn:hover {
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* Generic Sections (cards) */
+/* ========== SECTIONS (CARDS) ========== */
 .section {
   background: linear-gradient(145deg, #ffffff, #f7f7f7);
   padding: 2rem;
@@ -220,7 +219,7 @@ button:hover, .btn:hover {
 .section ul { margin-left: 1.5rem; list-style-type: disc; margin-bottom: 1rem; }
 .section ul li { margin-bottom: 0.5rem; }
 
-/* ---------- Contact Page Specific ---------- */
+/* ========== CONTACT PAGE ========== */
 
 /* Container */
 .container {
@@ -290,7 +289,7 @@ button:hover, .btn:hover {
 .field:focus { border-color: var(--accent); box-shadow: 0 0 8px rgba(255,107,107,0.4); }
 textarea.field { resize: none; height: 140px; }
 
-/* Small help text */
+/* Help Text */
 .form-help { margin-top: .5rem; color: #b00020; font-size: .95rem; }
 
 /* ========== FOOTER ========== */
@@ -357,7 +356,7 @@ footer hr {
   transform: translateY(-2px);
 }
 
-/* Responsive */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .main-header {
     flex-direction: column;

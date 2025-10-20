@@ -27,7 +27,7 @@ body {
   font-size: 16px;
 }
 
-/* ========== HEADER: Banner with Logo + Navbar ========== */
+/* ========== HEADER (BANNER WITH LOGO + NAVBAR) ========== */
 .banner {
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@ body {
   z-index: 1000;
 }
 
-/* Header */
+/* ========== HEADER BAR ========== */
 .main-header {
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Logo */
+/* ========== LOGO ========== */
 .header-logo img {
   width: 140px;
   height: auto;
@@ -66,7 +66,7 @@ body {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
 
-/* Navbar Layout */
+/* ========== NAVBAR LAYOUT ========== */
 .navbar {
   display: flex;
   align-items: center;
@@ -74,11 +74,8 @@ body {
   width: 100%;
 }
 
-/* Left Side Navigation Links */
-.nav-left {
-  display: flex;
-  align-items: center;
-}
+/* ========== NAV LEFT (LINKS) ========== */
+.nav-left { display: flex; align-items: center; }
 .nav-left ul {
   list-style: none;
   display: flex;
@@ -105,21 +102,17 @@ body {
   transition: width 0.3s ease;
   border-radius: 3px;
 }
-.nav-left ul li a:hover::after {
-  width: 100%;
-}
-.nav-left ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+.nav-left ul li a:hover::after { width: 100%; }
+.nav-left ul li a:hover { background: rgba(255, 255, 255, 0.1); }
 
-/* Right Side: Search Bar */
+/* ========== NAV RIGHT (SEARCH) ========== */
 .nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-/* Search Bar Styling */
+/* ========== SEARCH BAR ========== */
 .site-search {
   display: flex;
   align-items: center;
@@ -161,6 +154,7 @@ body {
   height: 1px;
   overflow: hidden;
 }
+
 /* ========== CONTAINER ========== */
 .container {
   max-width: 900px;
@@ -198,14 +192,14 @@ body {
 }
 .section p { margin-bottom: 1rem; }
 
-/* ========== FORMS ========== */
+/* ========== FORMS (WRAPPER) ========== */
 .form-box {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Optional grid for wider screens (keeps same HTML) */
+/* ========== FORM ROWS ========== */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -215,12 +209,13 @@ body {
   .form-row { grid-template-columns: 1fr; }
 }
 
+/* ========== FORM LABELS ========== */
 .form-box label {
   font-weight: 600;
   color: var(--text);
 }
 
-/* Inputs */
+/* ========== FORM INPUTS ========== */
 .form-box input,
 .form-box textarea,
 .form-box select {
@@ -233,12 +228,13 @@ body {
   transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
 }
 
+/* ========== PLACEHOLDERS ========== */
 .form-box input::placeholder,
 .form-box textarea::placeholder {
   color: #8fa3b0;
 }
 
-/* Focus */
+/* ========== FOCUS STATES ========== */
 .form-box input:focus,
 .form-box textarea:focus,
 .form-box select:focus {
@@ -247,7 +243,7 @@ body {
   outline: none;
 }
 
-/* Validation hints (only highlight when user has interacted) */
+/* ========== VALIDATION (ON FOCUS) ========== */
 .form-box input:invalid:focus,
 .form-box textarea:invalid:focus,
 .form-box select:invalid:focus {
@@ -255,17 +251,17 @@ body {
   box-shadow: 0 0 0 3px rgba(255,107,107,.18);
 }
 
-/* Textarea sizing */
+/* ========== TEXTAREA SIZING ========== */
 .form-box textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-/* Small helper text / error text */
+/* ========== FORM NOTES & ERRORS ========== */
 .form-note { font-size: .9rem; color: #6b7c88; }
 .form-error { font-size: .95rem; color: var(--accent); font-weight: 600; }
 
-/* Submit button */
+/* ========== SUBMIT BUTTON ========== */
 .btn-submit {
   background: var(--accent);
   color: #fff;
@@ -370,15 +366,11 @@ footer hr {
     width: 100%;
     text-align: left;
   }
-  .container {
-    padding: 0 1rem;
-  }
-  .section h1 {
-    font-size: 1.6rem;
-  }
+  .container { padding: 0 1rem; }
+  .section h1 { font-size: 1.6rem; }
 }
 
-/* Reduce motion for users who prefer it */
+/* ========== REDUCED MOTION ========== */
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; }
 }

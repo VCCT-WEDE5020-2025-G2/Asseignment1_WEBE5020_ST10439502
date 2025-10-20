@@ -1,4 +1,4 @@
-/* General Reset */
+/* ========== RESET ========== */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Root Colors */
+/* ========== THEME ========== */
 :root {
     --primary: #635985;    
     --secondary: #443C68;  
@@ -16,7 +16,7 @@
     --text: #2c3e50;       
 }
 
-/* Body Styling */
+/* ========== BASE ========== */
 body {
     background: var(--light);
     color: var(--text);
@@ -24,7 +24,7 @@ body {
     font-size: 16px;
 }
 
-/* Header */
+/* ========== HEADER BAR ========== */
 .main-header {
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Logo */
+/* ========== LOGO ========== */
 .header-logo img {
   width: 140px;
   height: auto;
@@ -48,7 +48,7 @@ body {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
 
-/* Navbar Layout */
+/* ========== NAVBAR LAYOUT ========== */
 .navbar {
   display: flex;
   align-items: center;
@@ -56,7 +56,7 @@ body {
   width: 100%;
 }
 
-/* Left Side Navigation Links */
+/* ========== NAV LEFT (LINKS) ========== */
 .nav-left {
   display: flex;
   align-items: center;
@@ -94,14 +94,14 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Right Side: Search Bar */
+/* ========== NAV RIGHT (SEARCH) ========== */
 .nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-/* Search Bar Styling */
+/* ========== SEARCH BAR ========== */
 .site-search {
   display: flex;
   align-items: center;
@@ -144,14 +144,14 @@ body {
   overflow: hidden;
 }
 
-/* Container for Sections */
+/* ========== CONTENT WRAPPER ========== */
 .container {
     max-width: 1200px;
     margin: 3rem auto;
     padding: 0 2rem;
 }
 
-/* Sections */
+/* ========== SECTIONS (CARDS) ========== */
 .section {
     background: linear-gradient(145deg, #ffffff, #f9f9f9);
     padding: 2.5rem;
@@ -194,7 +194,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Footer */
+/* ========== FOOTER (BASIC) ========== */
 footer {
     background: var(--dark);
     color: white;
@@ -205,7 +205,7 @@ footer {
     border-top: 4px solid var(--accent);
 }
 
-/* Buttons */
+/* ========== BUTTONS ========== */
 button {
     background: var(--accent);
     border: none;
@@ -223,6 +223,7 @@ button:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
+
 /* ========== FOOTER ========== */
 footer {
   background: var(--dark);
@@ -287,7 +288,7 @@ footer hr {
   transform: translateY(-2px);
 }
 
-/* Responsive Design */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .header-image img {
         width: 130px;

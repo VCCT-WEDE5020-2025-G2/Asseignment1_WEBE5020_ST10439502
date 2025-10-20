@@ -28,7 +28,7 @@ body {
   font-size: 16px;
 }
 
-/* Header */
+/* ========== HEADER BAR ========== */
 .main-header {
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Logo */
+/* ========== LOGO ========== */
 .header-logo img {
   width: 140px;
   height: auto;
@@ -52,7 +52,7 @@ body {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
 
-/* Navbar Layout */
+/* ========== NAVBAR LAYOUT ========== */
 .navbar {
   display: flex;
   align-items: center;
@@ -60,7 +60,7 @@ body {
   width: 100%;
 }
 
-/* Left Side Navigation Links */
+/* ========== NAV LEFT (LINKS) ========== */
 .nav-left {
   display: flex;
   align-items: center;
@@ -91,21 +91,17 @@ body {
   transition: width 0.3s ease;
   border-radius: 3px;
 }
-.nav-left ul li a:hover::after {
-  width: 100%;
-}
-.nav-left ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+.nav-left ul li a:hover::after { width: 100%; }
+.nav-left ul li a:hover { background: rgba(255, 255, 255, 0.1); }
 
-/* Right Side: Search Bar */
+/* ========== NAV RIGHT (SEARCH) ========== */
 .nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-/* Search Bar Styling */
+/* ========== SEARCH BAR ========== */
 .site-search {
   display: flex;
   align-items: center;
@@ -148,13 +144,13 @@ body {
   overflow: hidden;
 }
 
-/* Active page */
+/* ========== ACTIVE PAGE LINK ========== */
 .navbar a[aria-current="page"] {
   background: rgba(255,255,255,0.14);
   outline: 2px solid rgba(255,255,255,0.12);
 }
 
-/* Volunteer button */
+/* ========== VOLUNTEER BUTTON ========== */
 .donateBtn {
   background: var(--accent);
   color: #fff;
@@ -171,14 +167,14 @@ body {
   background: #ff5959;
 }
 
-/* Keyboard focus */
+/* ========== KEYBOARD FOCUS ========== */
 a:focus-visible, .donateBtn:focus-visible {
   outline: 3px solid var(--ring);
   outline-offset: 2px;
   border-radius: 10px;
 }
 
-/* ========== LEGACY BANNER (if needed) ========== */
+/* ========== LEGACY BANNER  ========== */
 .banner {
   display: flex;
   align-items: center;
@@ -205,7 +201,7 @@ a:focus-visible, .donateBtn:focus-visible {
   padding: 0 1.25rem;
 }
 
-/* ========== SECTIONS / CARDS (includes timeline now) ========== */
+/* ========== SECTIONS / CARDS ========== */
 .section,
 .intro-section,
 .impact-section,
@@ -225,7 +221,7 @@ a:focus-visible, .donateBtn:focus-visible {
   box-shadow: 0 12px 26px rgba(0,0,0,.16);
 }
 
-/* Section headings */
+/* ========== SECTION HEADINGS ========== */
 .section h2,
 .impact-section h2,
 .timeline-section h2 {
@@ -254,7 +250,7 @@ a:focus-visible, .donateBtn:focus-visible {
   font-size: 1rem;
 }
 
-/* ========== INTRO (split text + image) ========== */
+/* ========== INTRO (TEXT + IMAGE) ========== */
 .intro-section {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
@@ -273,7 +269,7 @@ a:focus-visible, .donateBtn:focus-visible {
   box-shadow: 0 8px 18px var(--shadow);
 }
 
-/* ========== TIMELINE CONTENT STYLE (same text, just card look) ========== */
+/* ========== TIMELINE STYLE ========== */
 .timeline-section h2 { text-transform: none; }
 .timeline-section p {
   color: var(--text);
@@ -284,8 +280,6 @@ a:focus-visible, .donateBtn:focus-visible {
   margin-bottom: 1rem;
   line-height: 1.8;
 }
-
-/* Optional: visual divider dots on left margin */
 .timeline-section p::before {
   content: "•";
   color: var(--accent);

@@ -1,4 +1,4 @@
-/* General Reset */
+/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Root Colors */
+/* ========== THEME ========== */
 :root {
   --primary: #635985;
   --secondary: #443C68;
@@ -16,7 +16,7 @@
   --text: #2c3e50;
 }
 
-/* Body Styling */
+/* ========== BASE ========== */
 body {
   background: var(--light);
   color: var(--text);
@@ -24,7 +24,7 @@ body {
   font-size: 16px;
 }
 
-/* Header */
+/* ========== HEADER BAR ========== */
 .main-header {
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Logo */
+/* ========== LOGO ========== */
 .header-logo img {
   width: 140px;
   height: auto;
@@ -48,7 +48,7 @@ body {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
 
-/* Navbar Layout */
+/* ========== NAVBAR LAYOUT ========== */
 .navbar {
   display: flex;
   align-items: center;
@@ -56,7 +56,7 @@ body {
   width: 100%;
 }
 
-/* Left Side Navigation Links */
+/* ========== NAV LEFT (LINKS) ========== */
 .nav-left {
   display: flex;
   align-items: center;
@@ -87,21 +87,17 @@ body {
   transition: width 0.3s ease;
   border-radius: 3px;
 }
-.nav-left ul li a:hover::after {
-  width: 100%;
-}
-.nav-left ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+.nav-left ul li a:hover::after { width: 100%; }
+.nav-left ul li a:hover { background: rgba(255, 255, 255, 0.1); }
 
-/* Right Side: Search Bar */
+/* ========== NAV RIGHT (SEARCH) ========== */
 .nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-/* Search Bar Styling */
+/* ========== SEARCH BAR ========== */
 .site-search {
   display: flex;
   align-items: center;
@@ -144,7 +140,7 @@ body {
   overflow: hidden;
 }
 
-/* Hero Banner */
+/* ========== HERO BANNER ========== */
 .banner {
   background: linear-gradient(rgba(30,115,115,0.7), rgba(19,59,59,0.9)),
               url('../images/ian-schneider-TamMbr4okv4-unsplash.jpg') center center no-repeat;
@@ -170,7 +166,7 @@ body {
   text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
 }
 
-/* Buttons */
+/* ========== BUTTONS ========== */
 button, .btn {
   background: var(--accent);
   border: none;
@@ -193,7 +189,7 @@ button:hover, .btn:hover {
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* Sections */
+/* ========== SECTIONS (CARDS) ========== */
 .section {
   background: linear-gradient(145deg, #ffffff, #f7f7f7);
   padding: 2rem;
@@ -202,10 +198,7 @@ button:hover, .btn:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.section:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
+.section:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
 .section h2 {
   color: var(--primary);
   margin-bottom: 1rem;
@@ -221,19 +214,9 @@ button:hover, .btn:hover {
   margin-top: 5px;
   border-radius: 2px;
 }
-.section p {
-  color: var(--text);
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-.section ul {
-  margin-left: 1.5rem;
-  list-style-type: disc;
-  margin-bottom: 1rem;
-}
-.section ul li {
-  margin-bottom: 0.5rem;
-}
+.section p { color: var(--text); line-height: 1.8; margin-bottom: 1rem; }
+.section ul { margin-left: 1.5rem; list-style-type: disc; margin-bottom: 1rem; }
+.section ul li { margin-bottom: 0.5rem; }
 
 /* ========== FOOTER ========== */
 footer {
@@ -299,7 +282,7 @@ footer hr {
   transform: translateY(-2px);
 }
 
-/* Responsive */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .main-header {
     flex-direction: column;
@@ -319,19 +302,9 @@ footer hr {
     width: 100%;
     justify-content: flex-start;
   }
-  .site-search input[type="search"] {
-    width: 100%;
-  }
-  .banner {
-    padding: 5rem 1rem;
-  }
-  .banner h1 {
-    font-size: 2rem;
-  }
-  .banner p {
-    font-size: 1.1rem;
-  }
-  .section h2 {
-    font-size: 1.7rem;
-  }
+  .site-search input[type="search"] { width: 100%; }
+  .banner { padding: 5rem 1rem; }
+  .banner h1 { font-size: 2rem; }
+  .banner p { font-size: 1.1rem; }
+  .section h2 { font-size: 1.7rem; }
 }
