@@ -126,7 +126,11 @@ This website was created to:
 
 - **Freepik.** (2025). *Community Images – Free Download on Freepik.*  
   [https://www.freepik.com/free-photos-vectors/community](https://www.freepik.com/free-photos-vectors/community)
+-  GeeksforGeeks (2024). GeeksforGeeks | A computer science portal for geeks. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/.
+-  W3Schools (2025). W3Schools online web tutorials. [online] W3schools.com. Available at: https://www.w3schools.com/.
+-  Hopehaven.net. (2024). Hope Haven. [online] Available at: https://hopehaven.net/.
 
+‌
 ---
 
 
