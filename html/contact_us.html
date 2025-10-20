@@ -1,81 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Hope Haven</title>
   <!-- Basic Meta -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- SEO -->
-  <title>Contact Us — Community Services & Support</title>
+  <title>Hope Haven — Community Services & Support</title>
   <meta name="description" content="Hope Haven supports individuals with developmental disabilities through residential and community services, advocacy, and inclusive programs.">
 
   <!-- Favicon -->
   <link rel="icon" href="/images/favicon-32x32.png">
-  <link rel="stylesheet" href="/css/contact.css" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/css/contact.css">
+
+  <!-- Icons (for footer social links) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <div class="banner">
-    <div class="header-image">
-      <img src="/images/HH-Logo-Final.webp" alt="Hope Haven Community Services">
+  <!-- Header (unchanged structure) -->
+  <header class="main-header">
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="/images/HH-Logo-Final.webp" alt="Hope Haven logo" width="160" height="60">
+      </a>
     </div>
-    <div class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="our_mission.html">Our Mission</a></li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="Enquiry.html">Volunteer</a></li>
-        <li><a href="contact_us.html" aria-current="page">Contact Us</a></li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="contact-box">
+    <nav class="navbar" aria-label="Primary Navigation">
+      <div class="nav-left">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="our_mission.html">Our Mission</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="Enquiry.html">Volunteer</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <form action="/search.html" method="get" class="site-search" role="search">
+          <label for="q" class="visually-hidden">Search this site</label>
+          <input id="q" type="search" name="q" placeholder="Search…" required>
+          <button type="submit" aria-label="Search"><span aria-hidden="true">🔍</span></button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contact -->
+  <main class="container">
+    <section class="contact-box" aria-labelledby="contactHeading">
       <div class="left">
-        <h2>Contact Us</h2>
-        <p><strong>Address:</strong><br>795 Newton Bridge Rd,<br>Athens, GA 30607</p>
-        <p><strong>Hours:</strong><br>Monday – Friday<br>8:00 am – 4:00 pm</p>
-        <p><strong>Phone:</strong><br>706-548-4361</p>
-        <p><strong>Email:</strong><br><a href="mailto:melinda@hopehaven.net.">melinda@hopehaven.net.</a></p>
+        <h2 id="contactHeading">Contact Us</h2>
+
+        <address>
+          <p><strong>Address:</strong><br>795 Newton Bridge Rd,<br>Athens, GA 30607</p>
+          <p><strong>Hours:</strong><br>Monday – Friday<br>8:00 am – 4:00 pm</p>
+          <p><strong>Phone:</strong><br><a href="tel:+17065484361">706-548-4361</a></p>
+          <p><strong>Email:</strong><br>
+            <a href="mailto:melinda@hopehaven.net">melinda@hopehaven.net</a>
+          </p>
+        </address>
       </div>
 
       <div class="right">
-        <form id="contactForm">
+        <form id="contactForm" novalidate>
           <h2>Send Us a Message</h2>
-          <input type="text" class="field" placeholder="Your Name" required>
-          <input type="email" class="field" placeholder="Your Email" required>
-          <input type="tel" class="field" placeholder="Phone">
-          <textarea placeholder="Message" class="field" required></textarea>
+
+          <label class="visually-hidden" for="name">Your Name</label>
+          <input id="name" name="name" type="text" class="field" placeholder="Your Name" autocomplete="name" required>
+
+          <label class="visually-hidden" for="email">Your Email</label>
+          <input id="email" name="email" type="email" class="field" placeholder="Your Email" autocomplete="email" required>
+
+          <label class="visually-hidden" for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" class="field" placeholder="Phone" autocomplete="tel">
+
+          <label class="visually-hidden" for="message">Your Message</label>
+          <textarea id="message" name="message" class="field" placeholder="Message" rows="5" required></textarea>
+
           <button type="submit" class="btn">Send</button>
+          <p id="formHelp" class="form-help" aria-live="polite"></p>
         </form>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <div class="container">
+  <!-- Map -->
+  <section class="container" aria-label="Map to our location">
     <iframe
+      title="Hope Haven location on map"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3253.360006033234!2d-83.41000948473862!3d33.9917813275887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f66c9b6b3d03e7%3A0xa74dcb4b258cd52a!2s795%20Newton%20Bridge%20Rd%2C%20Athens%2C%20GA%2030607!5e0!3m2!1sen!2sus!4v1693071749298!5m2!1sen!2sus"
       width="100%" height="300" style="border:0; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-  </div>
+  </section>
 
-  <!-- PROFESSIONAL SUCCESS MODAL -->
+  <!-- Success Modal -->
   <div id="successModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal__dialog" role="document">
-      <div class="modal__icon">✓</div>
+      <div class="modal__icon" aria-hidden="true">✓</div>
       <h3 id="modalTitle">Message received</h3>
       <p>Thank you for contacting Hope Haven. We’ve received your message and will get back to you soon.</p>
       <button type="button" class="modal__close" id="modalCloseBtn">OK</button>
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-about">
@@ -104,21 +138,24 @@
       </div>
     </div>
 
-    <hr />
+    <hr>
     <div class="footer-follow">
       <h3>Follow Us</h3>
       <ul>
-        <li><a href="#"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
       </ul>
     </div>
   </footer>
 
+  <!-- JS -->
   <script>
+    // Footer year
     document.getElementById("current-year").textContent = new Date().getFullYear();
 
+    // Modal helpers
     function openModal() {
       const modal = document.getElementById("successModal");
       const closeBtn = document.getElementById("modalCloseBtn");
@@ -146,8 +183,22 @@
       modal.removeEventListener("click", modal._onBackdrop || (()=>{}));
     }
 
+    // Basic client-side validation & modal trigger
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
+
+      const help = document.getElementById("formHelp");
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const message = document.getElementById("message");
+
+      // minimal validation feedback
+      if (!name.value.trim() || !email.validity.valid || !message.value.trim()) {
+        help.textContent = "Please complete your name, a valid email, and a message.";
+        return;
+      }
+
+      help.textContent = "";
       openModal();
       this.reset();
     });
@@ -155,10 +206,9 @@
     document.getElementById("modalCloseBtn").addEventListener("click", closeModal);
   </script>
 
+  <!-- Modal Styles (kept self-contained) -->
   <style>
-    :root {
-      --primary:#635985; --secondary:#443C68; --text:#2c3e50;
-    }
+    :root { --primary:#635985; --secondary:#443C68; --text:#2c3e50; }
     .modal {
       position: fixed; inset: 0;
       display: none; align-items: center; justify-content: center;
@@ -189,6 +239,9 @@
     .modal__close:hover { background: var(--secondary); transform: translateY(-1px); }
     @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
     @keyframes pop { from { transform: translateY(6px) scale(.98) } to { transform: translateY(0) scale(1) } }
+
+    /* small help text under form button */
+    .form-help { margin-top: .5rem; color: #b00020; font-size: .95rem; }
   </style>
 </body>
 </html>
