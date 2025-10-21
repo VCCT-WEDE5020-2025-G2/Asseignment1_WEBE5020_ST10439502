@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <!-- Basic Meta -->
   <meta charset="utf-8">
@@ -56,6 +54,7 @@
       <h1 id="enquiry-title">Volunteer / Enquiry Form</h1>
 
       <form id="enquiryForm" class="form-box" novalidate>
+        <!-- Honeypot -->
         <input type="text" name="company" autocomplete="off" tabindex="-1" aria-hidden="true"
                style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
 
@@ -106,12 +105,20 @@
                     placeholder="Tell us how we can help..."></textarea>
         </div>
 
+        <!-- NEW: Choose email service -->
+        <fieldset style="border:1px solid #e6e6e6; padding:.75rem 1rem; border-radius:10px;">
+          <legend>Send with</legend>
+          <label><input type="radio" name="sendMethod" value="mailto" checked> Default mail app (mailto)</label><br>
+          <label><input type="radio" name="sendMethod" value="gmail"> Gmail (in browser)</label><br>
+          <label><input type="radio" name="sendMethod" value="outlook"> Outlook (Office 365 web)</label>
+        </fieldset>
+
         <label class="checkbox">
           <input type="checkbox" id="enqConsent" name="consent" required>
           I consent to Hope Haven contacting me about this enquiry.
         </label>
 
-        <button type="submit" id="enqSubmit" class="btn-submit">Send Enquiry</button>
+        <button type="submit" id="enqSubmit" class="btn-submit">Open Email</button>
 
         <p id="formStatus" class="form-note" aria-live="polite"></p>
       </form>
@@ -160,8 +167,88 @@
   </footer>
 
   <script>
+    // Footer year
     document.getElementById("current-year").textContent = new Date().getFullYear();
+
+    // ===== Email compose (mailto / Gmail / Outlook) =====
+    (function () {
+      const RECIPIENT = 'info@hopehaven.org'; // change if needed
+      const form = document.getElementById('enquiryForm');
+      const status = document.getElementById('formStatus');
+
+      const enc = (s) => encodeURIComponent(s || '');
+      const NL = '\r\n';
+
+      function composeMailto(to, subject, body) {
+        return 'mailto:' + enc(to) + '?subject=' + enc(subject) + '&body=' + enc(body);
+      }
+      function composeGmail(to, subject, body) {
+        return 'https://mail.google.com/mail/?view=cm&fs=1&to=' + enc(to) + '&su=' + enc(subject) + '&body=' + enc(body);
+      }
+      function composeOutlook(to, subject, body) {
+        return 'https://outlook.office.com/mail/deeplink/compose?to=' + enc(to) + '&subject=' + enc(subject) + '&body=' + enc(body);
+      }
+      function isValidEmail(v) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Honeypot check
+        if ((form.company && form.company.value.trim().length) > 0) {
+          // likely a bot; silently abort
+          return;
+        }
+
+        const name = (document.getElementById('enqName').value || '').trim();
+        const email = (document.getElementById('enqEmail').value || '').trim();
+        const phone = (document.getElementById('enqPhone').value || '').trim();
+        const type = (document.getElementById('enqType').value || '').trim() || 'General';
+        const message = (document.getElementById('enqMessage').value || '').trim();
+        const consent = document.getElementById('enqConsent').checked;
+        const contactMethod = (form.querySelector('input[name="contact_method"]:checked') || {}).value || 'email';
+        const sendMethod = (form.querySelector('input[name="sendMethod"]:checked') || {}).value || 'mailto';
+
+        // Minimal validation
+        if (!name || !isValidEmail(email) || !message || !consent || !type) {
+          status.textContent = 'Please complete your name, a valid email, enquiry type, message, and consent.';
+          return;
+        }
+        status.textContent = '';
+
+        const subject = `[${type}] Enquiry from ${name}`.slice(0, 150);
+        const body = [
+          'Hello Hope Haven team,', '',
+          message, '',
+          '---',
+          `Name: ${name}`,
+          `Email: ${email}`,
+          phone ? `Phone: ${phone}` : '',
+          `Preferred contact: ${contactMethod}`,
+          `Enquiry type: ${type}`,
+          'Sent from: Volunteer / Enquiry form'
+        ].filter(Boolean).join(NL);
+
+        let url = '';
+        if (sendMethod === 'gmail') {
+          url = composeGmail(RECIPIENT, subject, body);
+          window.open(url, '_blank', 'noopener,noreferrer');
+        } else if (sendMethod === 'outlook') {
+          url = composeOutlook(RECIPIENT, subject, body);
+          window.open(url, '_blank', 'noopener,noreferrer');
+        } else {
+          url = composeMailto(RECIPIENT, subject, body);
+          window.location.assign(url);
+        }
+
+        status.textContent = 'Draft opened. Review and send in your chosen email service.';
+        form.reset();
+      });
+    })();
   </script>
+
+  <!-- If /js/forms.js also attaches a submit handler to #enquiryForm, remove it to avoid conflicts -->
   <script src="/js/forms.js" defer></script>
 </body>
 </html>

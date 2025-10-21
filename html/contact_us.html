@@ -15,12 +15,12 @@
   <!-- Site CSS -->
   <link rel="stylesheet" href="/css/contact.css">
 
-  <!-- Icons (for footer social links) -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <!-- Header (unchanged structure) -->
+  <!-- Header -->
   <header class="main-header">
     <div class="header-logo">
       <a href="index.html">
@@ -82,8 +82,17 @@
           <label class="visually-hidden" for="message">Your Message</label>
           <textarea id="message" name="message" class="field" placeholder="Message" rows="5" required></textarea>
 
-          <button type="submit" class="btn">Send</button>
+          <!-- Choose email service -->
+          <fieldset class="field" style="border:1px solid #e6e6e6; padding:0.75rem 1rem; border-radius:10px;">
+            <legend>Send with</legend>
+            <label><input type="radio" name="sendMethod" value="mailto" checked> Default mail app (mailto)</label><br>
+            <label><input type="radio" name="sendMethod" value="gmail"> Gmail (in browser)</label><br>
+            <label><input type="radio" name="sendMethod" value="outlook"> Outlook (Office 365 web)</label>
+          </fieldset>
+
+          <button type="submit" class="btn">Open Email</button>
           <p id="formHelp" class="form-help" aria-live="polite"></p>
+          <div id="status" class="form-help" aria-live="polite"></div>
         </form>
       </div>
     </section>
@@ -152,61 +161,77 @@
 
   <!-- JS -->
   <script>
-    // Footer year \\
+    // Footer year
     document.getElementById("current-year").textContent = new Date().getFullYear();
 
-    // Modal helpers \\
-    function openModal() {
-      const modal = document.getElementById("successModal");
-      const closeBtn = document.getElementById("modalCloseBtn");
-      if (!modal) return;
+    // ===== Email compose JS =====
+    (function () {
+      const RECIPIENT = 'melinda@hopehaven.net'; 
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('status');
+      const help = document.getElementById('formHelp');
 
-      modal.classList.add("show");
-      modal.setAttribute("aria-hidden", "false");
-      if (closeBtn) closeBtn.focus();
+      const enc = (s) => encodeURIComponent(s || '');
 
-      const onKey = (e) => { if (e.key === "Escape") closeModal(); };
-      const onBackdrop = (e) => { if (e.target === modal) closeModal(); };
-
-      modal._onKey = onKey;
-      modal._onBackdrop = onBackdrop;
-
-      window.addEventListener("keydown", onKey);
-      modal.addEventListener("click", onBackdrop);
-    }
-    function closeModal() {
-      const modal = document.getElementById("successModal");
-      if (!modal) return;
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden", "true");
-      window.removeEventListener("keydown", modal._onKey || (()=>{}));
-      modal.removeEventListener("click", modal._onBackdrop || (()=>{}));
-    }
-
-    // Basic client-side validation & modal trigger \\
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const help = document.getElementById("formHelp");
-      const name = document.getElementById("name");
-      const email = document.getElementById("email");
-      const message = document.getElementById("message");
-
-      // minimal validation feedback \\
-      if (!name.value.trim() || !email.validity.valid || !message.value.trim()) {
-        help.textContent = "Please complete your name, a valid email, and a message.";
-        return;
+      function composeMailto(to, subject, body) {
+        return 'mailto:' + enc(to) + '?subject=' + enc(subject) + '&body=' + enc(body);
+      }
+      function composeGmail(to, subject, body) {
+        return 'https://mail.google.com/mail/?view=cm&fs=1&to=' + enc(to) + '&su=' + enc(subject) + '&body=' + enc(body);
+      }
+      function composeOutlook(to, subject, body) {
+        return 'https://outlook.office.com/mail/deeplink/compose?to=' + enc(to) + '&subject=' + enc(subject) + '&body=' + enc(body);
+      }
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       }
 
-      help.textContent = "";
-      openModal();
-      this.reset();
-    });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    document.getElementById("modalCloseBtn").addEventListener("click", closeModal);
+        const name = (form.name.value || '').trim();
+        const email = (form.email.value || '').trim();
+        const message = (form.message.value || '').trim();
+        const sendMethod = (form.querySelector('input[name="sendMethod"]:checked') || {}).value || 'mailto';
+
+        
+        if (!name || !validateEmail(email) || !message) {
+          if (help) help.textContent = "Please complete your name, a valid email, and a message.";
+          return;
+        } else if (help) {
+          help.textContent = "";
+        }
+
+        const NL = '\r\n';
+        const subject = `Website contact from ${name || 'Someone'}`.slice(0, 150);
+        const body = [
+          'Hello Hope Haven team,', '',
+          message, '',
+          '---',
+          `Sender: ${name}`,
+          `Email: ${email}`,
+          'Sent from: Website contact form'
+        ].join(NL);
+
+        let url = '';
+        if (sendMethod === 'gmail') {
+          url = composeGmail(RECIPIENT, subject, body);
+          window.open(url, '_blank', 'noopener,noreferrer');
+        } else if (sendMethod === 'outlook') {
+          url = composeOutlook(RECIPIENT, subject, body);
+          window.open(url, '_blank', 'noopener,noreferrer');
+        } else {
+          url = composeMailto(RECIPIENT, subject, body);
+          window.location.assign(url);
+        }
+
+        if (status) status.textContent = 'Draft opened. Review and send in your chosen email service.';
+        form.reset();
+      });
+    })();
   </script>
 
-  <!-- Modal Styles (kept self-contained) -->
+  <!-- Modal Styles -->
   <style>
     :root { --primary:#635985; --secondary:#443C68; --text:#2c3e50; }
     .modal {
